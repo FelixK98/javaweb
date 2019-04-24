@@ -1,0 +1,54 @@
+
+*{
+    font-size: 20px;
+
+}
+#mainDiv{
+    position: absolute;
+    margin: auto;
+    width:  max-content;
+    height: max-content;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+}
+#accountDiv, #food, #drink, #productDiv{
+    width:  max-content;
+    height: max-content;
+    
+    border: 1px solid #ccc;
+    margin: 40px 40px 40px 40px;
+}
+#accountDiv, #food{
+    background-color: #c4e2c3;
+}
+#drink, #productDiv{
+     background-color: #dee2c3;
+     display: block;
+}
+
+h1{
+    
+    text-align: center;
+}
+form{
+   margin-left: auto;
+  margin-right: auto;
+    
+}
+th, td{
+    text-align: center;
+}
+span{
+    text-align: center;
+}
+h2{
+    color: green;
+    text-align: center;
+}
+input[type=submit]{
+    cursor: pointer;
+}
+

@@ -1,0 +1,37 @@
+*{
+    font-size: 20px;
+
+}
+div{
+    position: absolute;
+    margin: auto;
+    width:  fit-content;
+    height: fit-content;
+    background-color: #f2f2f2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #ccc;
+}
+form{
+    margin: 20px 20px 20px 20px;
+}
+h1, a, font{
+    text-align: center;
+}
+input[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+font{
+    color: red;
+    font-size: 15px;
+}
+label{
+    color : #556175;
+}
+a{
+    display: block;
+}
