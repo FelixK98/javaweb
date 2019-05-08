@@ -1,0 +1,30 @@
+
+body{
+    background-color: #f7f8f9;
+}
+.product_title{
+    font-weight: 700;
+     background-color: white;
+    
+}
+.product_price{
+    font-weight: 700;
+    color: #EA8025;
+     background-color: white;
+   
+}
+.caption{
+    margin-top: 0px;
+     background-color: white;
+    
+}
+img{
+    margin-bottom: 0;
+}
+.products{
+    background-color: white;
+    padding: 0;
+    text-align: center;
+ border: 0.25px solid #f2bd8e;    
+}
+

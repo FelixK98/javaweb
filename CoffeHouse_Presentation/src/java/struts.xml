@@ -1,0 +1,188 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="" class="khoavm.com.actions.StartUpAction">
+            <result name="index">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result>
+            <result name="user">/WEB-INF/views/user.jsp</result>
+        </action>
+        <action name="StartUpAction" class="khoavm.com.actions.StartUpAction">
+            <result name="index">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result>
+            <result name="user">/WEB-INF/views/user.jsp</result>
+        </action>
+        <action name="SearchByTypeAction" class="khoavm.com.actions.SearchByTypeAction">
+            <result name="guest">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result> 
+            <result name="user">/WEB-INF/views/user.jsp</result>                           
+        </action>
+        <action name="SearchProductByNameAction" class="khoavm.com.actions.SearchProductByNameAction">
+            <result name="guest">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result> 
+            <result name="user">/WEB-INF/views/user.jsp</result>                           
+        </action>
+        <action name="SearchFoodByNameAction" class="khoavm.com.actions.SearchFoodByNameAction">
+            <result name="guest">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result> 
+            <result name="user">/WEB-INF/views/user.jsp</result>                           
+        </action>
+        <action name="SearchDrinkByNameAction" class="khoavm.com.actions.SearchDrinkByNameAction">
+            <result name="guest">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result> 
+            <result name="user">/WEB-INF/views/user.jsp</result>                           
+        </action>
+        <action name="SearchAccountByNameAction" class="khoavm.com.actions.SearchAccountByNameAction">
+            <result name="guest">/WEB-INF/views/index.jsp</result>
+            <result name="admin">/WEB-INF/views/admin.jsp</result> 
+            <result name="user">/WEB-INF/views/user.jsp</result>                           
+        </action>
+        <action name="GoToLoginPageAction" class="khoavm.com.actions.GoToLoginPageAction">
+            <result name="guest">/WEB-INF/views/login.jsp</result>
+            <result name="logged" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>
+        </action>
+        <action name="GoToRegisterPageAction" class="khoavm.com.actions.GoToRegisterPageAction">
+            <result name="guest">/WEB-INF/views/sign_up.jsp</result>
+            <result name="logged" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>
+        </action>
+          <action name="GoToAddProductPageAction" class="khoavm.com.actions.GoToAddProductPageAction">
+            <result name="success">/WEB-INF/views/add_product.jsp</result>
+            <result name="fail" >/WEB-INF/views/error.jsp</result>
+        </action>
+        <action name="SignUpAction" class="khoavm.com.actions.SignUpAction">
+            <result name="success">/WEB-INF/views/login.jsp</result>
+            <result name="fail">/WEB-INF/views/sign_up.jsp</result>
+            <result name="error">/WEB-INF/views/error.jsp</result>
+        </action>
+        <action name="LoginAction" class="khoavm.com.actions.LoginAction">
+            <result name="admin">/WEB-INF/views/admin.jsp</result>
+            <result name="user">/WEB-INF/views/user.jsp</result>
+            <result name="fail">/WEB-INF/views/login.jsp</result>
+            <result name="logged" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>
+        </action>
+        <action name="LogOutAction" class="khoavm.com.actions.LogOutAction">
+            <result name="index">/WEB-INF/views/index.jsp</result>           
+        </action>
+        <action name="DeleteAccountAction" class="khoavm.com.actions.DeleteAccountAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">SearchAccountByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="fail">/WEB-INF/views/error.jsp</result>
+        </action>
+        <action name="DeleteProductAction" class="khoavm.com.actions.DeleteProductAction">
+            <result name="drink" type="redirectAction">
+                <param name="actionName">SearchDrinkByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">drink</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="food" type="redirectAction">
+                <param name="actionName">SearchFoodByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">food</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="fail">/WEB-INF/views/error.jsp</result>
+        </action>
+                <action name="AddProductAction" class="khoavm.com.actions.AddProductAction">
+            <result name="drink" type="redirectAction">
+                <param name="actionName">SearchDrinkByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">drink</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="food" type="redirectAction">
+                <param name="actionName">SearchFoodByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">food</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="fail">/WEB-INF/views/error.jsp</result>
+           <result name="duplicate">/WEB-INF/views/add_product.jsp</result>
+        </action>
+           <action name="UpdateProductAction" class="khoavm.com.actions.UpdateProductAction">
+            <result name="drink" type="redirectAction">
+                <param name="actionName">SearchDrinkByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">drink</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="food" type="redirectAction">
+                <param name="actionName">SearchFoodByNameAction</param>
+                <param name="search">${search}</param>
+                <param name="type">food</param>
+                <param name="role">admin</param>                
+            </result>
+            <result name="fail">/WEB-INF/views/error.jsp</result>
+        </action>
+        
+        <action name="EditAccountController" class="khoavm.com.actions.EditAccountController">
+            <result name="update" >/WEB-INF/views/user_update.jsp</result>
+            <result name="fail">/WEB-INF/views/error.jsp</result>                  
+        </action>
+        <action name="EditProductController" class="khoavm.com.actions.EditProductController">
+            <result name="update" >/WEB-INF/views/product_update.jsp</result>  
+            <result name="fail">/WEB-INF/views/error.jsp</result>                        
+        </action>
+        <action name="UpdateUserController" class="khoavm.com.actions.UpdateUserController">
+            <result name="admin" type="redirectAction">
+                <param name="actionName">SearchAccountByNameAction</param>
+                <param name="role">admin</param>
+                <param name="search">${search}</param>
+            </result>     
+            <result name="user">/WEB-INF/views/user.jsp</result>  
+            <result name="fail">/WEB-INF/views/error.jsp</result>                   
+        </action>
+           <action name="AddToCartAction" class="khoavm.com.actions.AddToCartAction">
+            <result type="redirectAction" name="notuser" >
+                <param name="actionName">StartUpAction</param>
+            </result>
+            <result name="user">/WEB-INF/views/user.jsp</result>                                    
+        </action>
+        <action name="GoToViewCartPageAction" class="khoavm.com.actions.GoToViewCartPageAction">
+            <result name="user">/WEB-INF/views/view_cart.jsp</result>
+            <result name="notuser" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>
+        </action>
+        <action name="RemoveCartItemActon" class="khoavm.com.actions.RemoveCartItemActon">
+            <result name="user">/WEB-INF/views/view_cart.jsp</result>
+            <result name="notuser" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>
+        </action>
+            <action name="OrderProductAction" class="khoavm.com.actions.OrderProductAction">
+            <result name="user">/WEB-INF/views/order_success.jsp</result>
+            <result name="quantityfail">/WEB-INF/views/view_cart.jsp</result>
+            <result name="dberror">/WEB-INF/views/error.jsp</result>
+            <result name="notuser" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>            
+        </action>
+            <action name="GoToPaymentHistoryPageAction" class="khoavm.com.actions.GoToPaymentHistoryPageAction">
+            <result name="user">/WEB-INF/views/payment_history.jsp</result>            
+            <result name="dberror">/WEB-INF/views/error.jsp</result>
+            <result name="notuser" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>            
+        </action>
+        <action name="CheckDiscountCodeAction" class="khoavm.com.actions.CheckDiscountCodeAction">
+            <result name="user">/WEB-INF/views/view_cart.jsp</result>          
+            <result name="dberror">/WEB-INF/views/error.jsp</result>
+            <result name="notuser" type="redirectAction">
+                <param name="actionName">StartUpAction</param>
+            </result>            
+        </action>
+    </package>
+</struts>
